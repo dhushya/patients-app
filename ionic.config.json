@@ -1,0 +1,7 @@
+{
+  "name": "patient-details",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
