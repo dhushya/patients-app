@@ -1,7 +1,8 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Tab3.css';
+import { cloudUploadOutline, syncCircleOutline } from 'ionicons/icons';
+import { PouchDBFunctions } from '../components/pouch';
 
 const Tab3: React.FC = () => {
   return (
@@ -12,12 +13,15 @@ const Tab3: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        <IonFab vertical="center" horizontal="center">
+          <IonFabButton onClick={async () => {
+            var functions = new PouchDBFunctions();
+            var response = await functions.sync();
+            console.log(response);
+          }}>
+            <IonIcon icon={cloudUploadOutline}></IonIcon>
+          </IonFabButton>
+        </IonFab>
       </IonContent>
     </IonPage>
   );

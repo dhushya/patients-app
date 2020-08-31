@@ -1,7 +1,8 @@
 {
-  "name": "patient-details",
+  "name": "Patient Details",
   "integrations": {
     "capacitor": {}
   },
-  "type": "react"
+  "type": "react",
+  "id": "76fc7b9a"
 }
